@@ -38,26 +38,33 @@ from typing import List
 
 
 
-def remove_eight(nums:List[int]) -> List[int]:
-    new_array = []
-    for i in range(len(nums)):
-        if len(new_array) == 0:
-            new_array.append(nums[i])
-        elif len(new_array) > 0:
-            last_element = new_array[-1]
-            if last_element + nums[i] == 8:
-                new_array.pop()
-            else:
-                new_array.append(nums[i])
+# def remove_eight(nums:List[int]) -> List[int]:
+#     new_array = []
+#     for i in range(len(nums)):
+#         if len(new_array) == 0:
+#             new_array.append(nums[i])
+#         elif len(new_array) > 0:
+#             last_element = new_array[-1]
+#             if last_element + nums[i] == 8:
+#                 new_array.pop()
+#             else:
+#                 new_array.append(nums[i])
     
-    return new_array
+#     return new_array
 
-print(remove_eight([1,2,3,5,6,9]))
-print(remove_eight([1,7]))
-print(remove_eight([1,6]))
-
-
+# print(remove_eight([1,2,3,5,6,9]))
+# print(remove_eight([1,7]))
+# print(remove_eight([1,6]))
 
 
-
-
+def subarraySum(nums:List[int], k:int) -> int:
+    total = 0
+    current = 0
+    result = {0:1}
+    for num in nums:
+        current += num
+        num_needed = current - k
+        if num_needed in result:
+            total += result[num_needed]
+        result[current] = result.get(current, 0) + 1
+    return result
