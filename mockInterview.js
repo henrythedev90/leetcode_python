@@ -12,19 +12,27 @@
 // Input [3,4,1,5,4,2,3,5,3,4]
 // Output: k = 2 => 5, k = 3 => 3
 
-const occursKTimes = (arr, k) => {
-  let checker = {};
-  for (let i = 0; i < arr.length; i++) {
-    if (!checker[arr[i]]) {
-      checker[arr[i]] = 1;
-    } else {
-      checker[arr[i]]++;
-    }
+// const occursKTimes = (arr, k) => {
+//   let checker = {};
+//   for (let i = 0; i < arr.length; i++) {
+//     if (!checker[arr[i]]) {
+//       checker[arr[i]] = 1;
+//     } else {
+//       checker[arr[i]]++;
+//     }
+//   }
+//   for (let key in checker) {
+//     if (checker[key] === k) {
+//       return key;
+//     }
+//   }
+// };
+// console.log(occursKTimes([3, 4, 1, 5, 4, 2, 3, 5, 3, 4], 2));
+
+const fizzBuzz = (n) => {
+  for (let i = 0; i <= n; i++) {
+    console.log(i);
   }
-  for (let key in checker) {
-    if (checker[key] === k) {
-      return key;
-    }
-  }
+  return "done";
 };
-console.log(occursKTimes([3, 4, 1, 5, 4, 2, 3, 5, 3, 4], 2));
+console.log(fizzBuzz(15));
