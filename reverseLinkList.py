@@ -15,9 +15,7 @@ def reverseLinkedList(head: Optional[ListNode]) -> Optional[ListNode]:
     return prev
 
 def hasCycle(head: Optional[ListNode]) -> bool:
-    """
-    Detect if there is a cycle in the linked list using Floyd's Cycle Finding Algorithm (Tortoise and Hare)
-    """
+
     if not head or not head.next:
         return False
     
