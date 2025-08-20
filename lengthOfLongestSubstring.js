@@ -17,6 +17,6 @@ const lengthOfLongestSubstring = (str) => {
   return longestString;
 };
 
-let letter = "henry";
+let letter = "abcdefghijklmnopqrstuvwxyz";
 let result = lengthOfLongestSubstring(letter);
 console.log(result);
